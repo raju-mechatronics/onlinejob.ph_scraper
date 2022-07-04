@@ -2,9 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-#root{
-  width: 400px;
-  height: 450px;
-  font-size: 1rem;
+#dataViewer {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+  width: 800px;
+  height: 400px;
+  flex-direction: column;
+  background: #FFFC;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border: 5px solid darkgray;
 }
 
+#buttonViewer {
+  position: fixed;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  bottom: 30px;
+  left: 30px;
+}

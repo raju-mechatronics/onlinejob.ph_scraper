@@ -11,3 +11,9 @@ export type JobType = {
     description: string;
     url: string;
 }
+
+export type StateType = {
+    currentStack: JobType[];
+    running: boolean;
+    tabId?: number;
+}
