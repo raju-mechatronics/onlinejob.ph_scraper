@@ -53,7 +53,7 @@ const App: FunctionComponent = () => {
               {groups.map((group, index) => (
                 <tr key={group.id}>
                   <td>{index + 1}</td>
-                  <td>{new Date(group.id).toLocaleString()}</td>
+                  <td>{new Date(Number(group.id)).toLocaleString()}</td>
                   <td>{group.jobs.length}</td>
                   <td>
                     <button
