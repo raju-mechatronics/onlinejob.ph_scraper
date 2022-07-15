@@ -53,14 +53,15 @@ const mapJob = (job: JobType): string =>
 export async function copyGroup(id: string) {
   const groupObj = await Storage.get(id);
   const jobGroup = groupObj[id] as JobType[];
-  const copyText = jobGroup.map((job) => mapJob(job)).join('');
+  const copyText = `<table>${jobGroup.map((job) => mapJob(job)).join('')}</table>`;
   await navigator.clipboard.writeText(copyText);
 }
 
 export async function exportCSV(id: string) {
   const jobs = await Storage.get(id);
-  const csv = papa.unparse(jobs[id]);
-  console.log(csv);
+  const csv = papa.unparse(jobs[id], {
+    columns: ['title', 'writer', 'rate', 'date', 'description', 'url'],
+  });
   const blob = new Blob([csv]);
   const a = document.createElement('a');
   // @ts-ignore

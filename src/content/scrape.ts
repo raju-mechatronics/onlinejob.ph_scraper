@@ -11,13 +11,22 @@ function stringBeautify(str: string) {
 }
 
 async function scrapeData(element: HTMLElement): Promise<JobType> {
+  element.scrollIntoView();
+  element.style.border = '3px solid blue';
   const title = $(element).find('[title]').html().split('<span')[0].trim();
   const [writer, date] = $(element).find('a > p.fs-13.mb-0[data-temp]').text().split('•');
   const rate = $(element).find('dd.col').text();
   const jobURL = $(element).find('a').attr('href');
-  const res = await fetch(jobURL as string);
-  const resText = await res.text();
-  const description = $(resText).find('#job-description').text();
+  let description: string;
+  try {
+    const res = await fetch(jobURL as string);
+    const resText = await res.text();
+    description = $(resText).find('#job-description').text();
+    element.style.border = '3px solid green';
+  } catch (e) {
+    element.style.border = '3px solid red';
+    description = '';
+  }
   return {
     date: stringBeautify(date),
     description: stringBeautify(description),
