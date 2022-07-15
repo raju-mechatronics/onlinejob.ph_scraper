@@ -48,12 +48,12 @@ export async function getGroup(id: string): Promise<ITotalJob> {
 }
 
 const mapJob = (job: JobType): string =>
-  `<tr><td>${job.title}</td><td>${job.writer}</td><td>${job.rate}</td><td>${job.date}</td><td>${job.description}</td><td>${job.url}</td></tr>`;
+  `${job.title}\t${job.writer}\t${job.rate}\t${job.date}\t${job.description}\t${job.url}`;
 
 export async function copyGroup(id: string) {
   const groupObj = await Storage.get(id);
   const jobGroup = groupObj[id] as JobType[];
-  const copyText = `<table>${jobGroup.map((job) => mapJob(job)).join('')}</table>`;
+  const copyText = jobGroup.map((job) => mapJob(job)).join('\n');
   await navigator.clipboard.writeText(copyText);
 }
 

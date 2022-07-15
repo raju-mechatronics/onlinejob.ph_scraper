@@ -16,7 +16,7 @@ async function scrapeData(element: HTMLElement): Promise<JobType> {
   const title = $(element).find('[title]').html().split('<span')[0].trim();
   const [writer, date] = $(element).find('a > p.fs-13.mb-0[data-temp]').text().split('•');
   const rate = $(element).find('dd.col').text();
-  const jobURL = $(element).find('a').attr('href');
+  const jobURL = location.origin + $(element).find('a').attr('href');
   let description: string;
   try {
     const res = await fetch(jobURL as string);
