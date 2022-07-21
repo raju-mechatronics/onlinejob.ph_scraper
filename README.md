@@ -1,10 +1,7 @@
 <div align="center">
 
-# Rabat
+# Raju Ahmed
 
-Discount/promo code tracker for chrome
-
-[**Show your support by giving a ⭐**](https://github.com/krzysztofzuraw/template-react/stargazers)
 
 <br/><hr/>
 
@@ -16,19 +13,7 @@ Discount/promo code tracker for chrome
 
 Add promo code
 
-![Add promo code](./add-view.png)
-
-List promo code
-
-![List promo codes](./list-view.png)
-
-Edit promo code
-
-![Edit promo code](./edit-view.png)
-
-## Contributing and Issues
-
-Please feel free to contribute or file issues 🎉
+## You will need Node, version above 12 installed in your pc
 
 Install dependencies
 
@@ -57,6 +42,3 @@ Lint
 npm run lint
 ```
 
-### Credits
-
-Extension icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>

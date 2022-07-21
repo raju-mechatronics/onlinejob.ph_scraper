@@ -3,7 +3,6 @@ import { sendMessage, Storage } from '../redefination';
 import { JsonType } from '../types/utilType';
 import papa from 'papaparse';
 import { scrape } from './scrape';
-import { debug } from 'webpack';
 
 export async function getId(): Promise<number> {
   const id = await sendMessage('getId');
